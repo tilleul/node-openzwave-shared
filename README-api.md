@@ -28,8 +28,13 @@ specific events to correctly map the network.
 
 Connecting to the network:
 ```js
+// linux/Mac OS
 zwave.connect('/dev/ttyUSB0');  // connect to a USB ZWave controller
 zwave.disconnect('dev/ttyUSB0');// disconnect from the current connection
+
+// Windows COM port looks like \\.\COMx
+zwave.connect('\\\\.\\COM13');  // connect to a USB ZWave controller on COM port #13
+zwave.disconnect('\\\\.\\COM13');// disconnect from the current connection
 ```
 **Important notice**: the connect() call is asynchronous following the
 node/v8 javascript paradigm.  This means that connect() will yield
